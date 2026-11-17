@@ -1,0 +1,10 @@
+---
+name: phinite-rules
+description: "Ground rules for Phinite work: the hosted phinite MCP server, local project folders, .env handling. Use whenever working with Phinite agent graphs, the phinite MCP tools, or a use-case folder (graph_spec.py, tools-src/, agent-prompts/)."
+---
+- The `phinite` MCP server is hosted and can't read this machine's files. For project folders and local files, use
+  the `phinite-project` skill and its script; send files only to an upload link a `phinite` tool just returned.
+- Before designing or changing a graph, tool or `graph_spec.py`, load the `phinite-design` skill. To test or debug,
+  `phinite-debug`; to publish or expose a graph, `phinite-ship`.
+- Never open, print or upload a whole `.env`: run the script's `env-check` and pass `names=[...]` to
+  `set_env_vars`. Never ask for or print tokens, cookies or API keys.
